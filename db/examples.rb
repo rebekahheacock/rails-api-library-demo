@@ -16,3 +16,15 @@
 #                password: 'abc123',
 #                password_confirmation: nil)
 # end
+
+Book.create([
+  { author: "Example Author", title: "Example Title" },
+  { author: "Example Author", title: "Example Title" },
+  { author: "Example Author", title: "Example Title" },
+  { author: "Example Author", title: "Example Title" },
+  { author: "Example Author", title: "Example Title" },
+  { author: "Example Author", title: "Example Title" },
+  { author: "Example Author", title: "Example Title" },
+  { author: "Example Author", title: "Example Title" },
+  { author: "Example Author", title: "Example Title" },
+])
