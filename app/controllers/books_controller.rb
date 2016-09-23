@@ -19,7 +19,7 @@ class BooksController < ApplicationController
   # will permit the client to send a title and author as well. 
   # could also require title & author, if we wanted to
   def book_params
-    params.require(:book).permit(:title, :author)
+    params.require(:book).permit(:title, :author_id)
   end
 
   def index

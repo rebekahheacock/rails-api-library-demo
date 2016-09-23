@@ -4,7 +4,7 @@ curl --include --request POST http://localhost:3000/books \
   --data '{
     "book": {
       "title": "fake title",
-      "author": "fake author"
+      "author_id": "3"
     }
   }'
 
@@ -20,7 +20,7 @@ curl --include --request PATCH http://localhost:3000/books/$ID \
   --data '{
     "book": {
       "title": "new title",
-      "author": "new author"
+      "author_id": "3"
     }
   }'
 
