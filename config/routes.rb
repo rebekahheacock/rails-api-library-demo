@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   # or
   # resources :books, except: [:new, :edit]
   # new and edit render the views; create and update deal w/database
+  resources :authors, except: [:new, :edit]
 end

@@ -10,7 +10,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # %w(antony jeff matt jason).each do |name|
-#   email = "#{name}@#{name}.com"
+#   email = '#{name}@#{name}.com'
 #   next if User.exists? email: email
 #   User.create!(email: email,
 #                password: 'abc123',
@@ -18,13 +18,18 @@
 # end
 
 Book.create([
-  { author: "Example Author", title: "Example Title" },
-  { author: "Example Author", title: "Example Title" },
-  { author: "Example Author", title: "Example Title" },
-  { author: "Example Author", title: "Example Title" },
-  { author: "Example Author", title: "Example Title" },
-  { author: "Example Author", title: "Example Title" },
-  { author: "Example Author", title: "Example Title" },
-  { author: "Example Author", title: "Example Title" },
-  { author: "Example Author", title: "Example Title" },
+  { author: 'Example Author', title: 'Example Title' },
+  { author: 'Example Author', title: 'Example Title' },
+  { author: 'Example Author', title: 'Example Title' },
+  { author: 'Example Author', title: 'Example Title' },
+  { author: 'Example Author', title: 'Example Title' },
+  { author: 'Example Author', title: 'Example Title' },
+  { author: 'Example Author', title: 'Example Title' },
+  { author: 'Example Author', title: 'Example Title' },
+  { author: 'Example Author', title: 'Example Title' }
+])
+
+Author.create([
+  { given_name: 'Bilbo', surname: 'Baggins' },
+  { given_name: 'J. R. R.', surname: 'Tolkien' }
 ])
