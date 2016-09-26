@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160923174511) do
+ActiveRecord::Schema.define(version: 20160926182653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 20160923174511) do
 
   add_index "books", ["author_id"], name: "index_books_on_author_id", using: :btree
 
+  create_table "borrowers", force: :cascade do |t|
+    t.string   "given_name"
+    t.string   "surname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "examples", force: :cascade do |t|
     t.text     "text",       null: false
     t.integer  "user_id",    null: false
@@ -40,6 +47,18 @@ ActiveRecord::Schema.define(version: 20160923174511) do
   end
 
   add_index "examples", ["user_id"], name: "index_examples_on_user_id", using: :btree
+
+  create_table "loans", force: :cascade do |t|
+    t.integer  "borrower_id"
+    t.integer  "book_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "loans", ["book_id"], name: "index_loans_on_book_id", using: :btree
+  add_index "loans", ["borrower_id"], name: "index_loans_on_borrower_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
@@ -54,4 +73,6 @@ ActiveRecord::Schema.define(version: 20160923174511) do
 
   add_foreign_key "books", "authors"
   add_foreign_key "examples", "users"
+  add_foreign_key "loans", "books"
+  add_foreign_key "loans", "borrowers"
 end

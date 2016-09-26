@@ -43,7 +43,30 @@ Book.create([
               { title: 'A Heartbreak' },
               { title: 'Example Title Numbah Two, Kid!', author_id: 5 },
               { title: 'A Wacky Title' },
-              { title: 'One Fish, Two Fish, Red Fish, Blue Fish', author_id: 2 },
+              { title: 'One Fish, Two Fish', author_id: 2 },
               { title: 'The BFG', author_id: 1 },
               { title: 'Matilda', author_id: 1 }
+            ])
+
+Borrower.create([
+                  { given_name: 'Alex', surname: 'Beers' },
+                  { given_name: 'Herb', surname: 'inator' },
+                  { given_name: 'Bilbo', surname: 'Baggins' },
+                  { given_name: 'Robbe', surname: 'Bob' },
+                  { given_name: 'Antony', surname: 'NOT ANTHONY' }
+                ])
+
+Loan.create([
+              {
+                start_date: '2016-09-26',
+                end_date: '2016-10-26',
+                book_id: 1,
+                borrower_id: 3
+              },
+              {
+                start_date: '2016-09-28',
+                end_date: '2016-10-28',
+                book_id: 2,
+                borrower_id: 2
+              }
             ])
